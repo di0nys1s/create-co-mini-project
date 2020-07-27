@@ -7,6 +7,7 @@ $headerBlueCreate: #020052;
 $headerBlueVM: #0BAECD;
 $mainYellow: #FFFF00;
 $rightSidebarPink: #F549C4;
+$mainWhite: #eee;
 
 @font-face {
     font-family: Trenda-Regular;
@@ -107,6 +108,13 @@ a:hover {
         border-right: 1.3px solid $mainBlue;
         margin: 80px 0;
 
+        a {
+            color: $mainBlue;
+        }
+        a:hover {
+            color: $mainWhite;
+        }
+
         .left-sidebar-icon {
             
             p {
@@ -140,6 +148,17 @@ a:hover {
             align-items: flex-start;
             justify-content: flex-start;
             margin: 20px;
+
+            .right-sidebar-icon {
+                p {
+                    a {
+                        color: $mainYellow;
+                    }
+                    a:hover {
+                        color: $rightSidebarPink;
+                    }
+                }
+            }
 
             .bell-image {
                 margin-bottom: 10px;

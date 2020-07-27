@@ -116,6 +116,14 @@ a:hover {
   margin: 80px 0;
 }
 
+.main-container .left-sidebar a {
+  color: #1E1151;
+}
+
+.main-container .left-sidebar a:hover {
+  color: #eee;
+}
+
 .main-container .left-sidebar .left-sidebar-icon p {
   margin-top: 5px;
 }
@@ -153,6 +161,14 @@ a:hover {
       -ms-flex-pack: start;
           justify-content: flex-start;
   margin: 20px;
+}
+
+.main-container .right-sidebar .right-top .right-sidebar-icon p a {
+  color: #FFFF00;
+}
+
+.main-container .right-sidebar .right-top .right-sidebar-icon p a:hover {
+  color: #F549C4;
 }
 
 .main-container .right-sidebar .right-top .bell-image {
