@@ -1,3 +1,23 @@
+@font-face {
+  font-family: Trenda-Regular;
+  src: url(/fonts/Trenda-Regular.otf);
+}
+
+@font-face {
+  font-family: Trenda-Bold;
+  src: url(/fonts/Trenda-Bold.otf);
+}
+
+@font-face {
+  font-family: Trenda-Semibold;
+  src: url(/fonts/Trenda-Semibold.otf);
+}
+
+@font-face {
+  font-family: Black-Diamond;
+  src: url(/fonts/Black-Diamond.ttf);
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -5,9 +25,20 @@
   margin: 0;
 }
 
+html,
+body {
+  font-family: Trenda-Regular, sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   background: url(/images/backgroundHome.png);
   background-size: cover;
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 .main-container {
@@ -16,8 +47,8 @@ body {
   width: 100vw;
   height: 100vh;
   grid-gap: 0;
-  -ms-grid-rows: 15% 85%;
-      grid-template-rows: 15% 85%;
+  -ms-grid-rows: 8% 92%;
+      grid-template-rows: 8% 92%;
       grid-template-areas: 'page-header  page-header page-header' 'left-sidebar main        right-sidebar';
 }
 
@@ -40,6 +71,22 @@ body {
 
 .main-container .page-header .header-home {
   margin-left: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 36px;
+}
+
+.main-container .page-header .header-home .header-vm {
+  font-family: Trenda-Bold, sans-serif;
+  color: #0BAECD;
+}
+
+.main-container .page-header .header-home .header-create {
+  font-family: Black-Diamond, sans-serif;
+  color: #020052;
+  margin-left: 3px;
+  font-size: 48px;
 }
 
 .main-container .page-header .header-login {
@@ -57,6 +104,8 @@ body {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: left-sidebar;
+  text-transform: uppercase;
+  font-family: Trenda-Semibold, sans-serif;
   display: -ms-grid;
   display: grid;
   text-align: center;
@@ -67,11 +116,21 @@ body {
   margin: 80px 0;
 }
 
+.main-container .left-sidebar .left-sidebar-icon p {
+  margin-top: 5px;
+}
+
+.main-container .left-sidebar .left-sidebar-icon p .fa-angle-down {
+  margin-left: 2px;
+  font-size: larger;
+}
+
 .main-container .right-sidebar {
   -ms-grid-row: 2;
   -ms-grid-column: 3;
   grid-area: right-sidebar;
   background-color: #1E1151;
+  font-family: Trenda-Bold, sans-serif;
   color: #fff;
   display: -ms-grid;
   display: grid;
@@ -121,6 +180,7 @@ body {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: right-bottom;
+  font-family: Trenda-Semibold, sans-serif;
   text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -158,8 +218,8 @@ body {
 
 @media only screen and (max-width: 768px) {
   .main-container {
-    -ms-grid-columns: 150px auto 150px;
-        grid-template-columns: 150px auto 150px;
+    -ms-grid-columns: 175px auto 200px;
+        grid-template-columns: 175px auto 200px;
   }
 }
 
@@ -181,13 +241,17 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
-    margin-top: 40px;
+    padding: 0 30px;
+    margin-top: 0;
+  }
+  .main-container .left-sidebar .left-sidebar-icon {
+    margin-right: 15px;
   }
   .main-container .right-sidebar {
     -ms-grid-rows: 33.3% 33.3% 33.3%;
