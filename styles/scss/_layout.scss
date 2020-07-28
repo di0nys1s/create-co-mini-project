@@ -1,0 +1,245 @@
+@import 'config';
+
+@mixin textTransform($param) {
+    text-transform: $param;
+}
+
+@mixin displayFlexGrid($display, $align, $justify) {
+    display: $display;
+    align-items: $align;
+    justify-content: $justify
+}
+
+@mixin smallScreenAdjustment($maxWidth, $minWidth, $leftSidebarIconMargin) {
+        @media only screen and (max-width: $maxWidth) and (min-width: $minWidth) {
+            .main-container {
+                max-width: 100%;
+                height: auto;
+                grid-template-columns: 100%;
+                grid-template-rows: 10% 5% 45% 40%;
+                row-gap: 5%;
+                grid-template-areas:
+                    'page-header'
+                    'left-sidebar'
+                    'main'
+                    'right-sidebar';
+
+                .left-sidebar {
+                    grid-area: left-sidebar;
+                    display: flex;
+                    align-items: baseline;
+                    justify-content: space-evenly;
+                    padding: 0 30px;
+                    margin-top: 0;
+
+                    .left-sidebar-icon {
+                        margin-right: $leftSidebarIconMargin;
+                    }
+
+                }
+
+                .right-sidebar {
+                    grid-template-rows: 33.3% 33.3% 33.3%;
+                    text-align: center;
+                    display: grid;
+                    justify-content: center;
+
+                    .right-top {
+                        text-align: center;
+                        display: grid;
+                        justify-content: center;
+                    }
+
+                    .right-middle {
+                        margin-top: 40px;
+                        margin-bottom: 100px;
+                    }
+                }
+
+            }
+        }
+}
+
+body {
+    background: url(/images/backgroundHome.png);
+    background-size: cover;
+
+    a {
+        text-decoration: none;
+        color: $mainWhite
+    }
+
+    .main-container {
+        display: grid;
+        width: 100vw;
+        height: 100vh;
+        grid-gap: 0;
+        column-gap: 40px;
+        grid-template-rows: 12% 88%;
+        grid-template-areas:
+            'page-header  page-header page-header'
+            'left-sidebar main        right-sidebar';
+
+
+        .page-header {
+            grid-area: page-header;
+            background-color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .header-home {
+                margin-left: 20px;
+                display: flex;
+                font-size: 36px;
+
+                .header-vm {
+                    font-family: Trenda-Bold, sans-serif;
+                    color: $headerBlueVM;
+                }
+
+                .header-create {
+                    font-family: Black-Diamond, sans-serif;
+                    color: $headerBlueCreate;
+                    margin-left: 3px;
+                    font-size: 48px;
+
+                }
+            }
+
+            .header-login {
+                margin-right: 20px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+
+        .main {
+            grid-area: main;
+            margin: 20px 0 0 0;
+        }
+
+        .left-sidebar {
+            grid-area: left-sidebar;
+            @include textTransform(uppercase);
+            font-family: Trenda-Semibold, sans-serif;
+            display: grid;
+            text-align: center;
+            align-items: center;
+            border-right: 1.3px solid $mainBlue;
+            margin: 80px 0;
+
+            a {
+                color: $mainBlue;
+            }
+
+            a:hover {
+                color: $mainWhite;
+            }
+
+            .left-sidebar-icon {
+
+                p {
+                    margin-top: 5px;
+
+                    .fa-angle-down {
+                        margin-left: 2px;
+                        font-size: larger;
+                    }
+                }
+            }
+        }
+
+        .right-sidebar {
+            grid-area: right-sidebar;
+            background-color: $mainBlue;
+            font-family: Trenda-Bold, sans-serif;
+            color: #fff;
+            display: grid;
+            grid-template-areas:
+                'right-top'
+                'right-middle'
+                'right-bottom';
+
+            .right-top {
+                @include textTransform(uppercase);
+                font-size: smaller;
+                color: $mainYellow;
+                grid-area: right-top;
+                display: grid;
+                align-items: flex-start;
+                justify-content: flex-start;
+                margin: 20px;
+
+                .right-sidebar-icon {
+                    p {
+                        a {
+                            color: $mainYellow;
+                        }
+
+                        a:hover {
+                            color: $rightSidebarPink;
+                        }
+                    }
+                }
+
+                .bell-image {
+                    margin-bottom: 10px;
+                }
+            }
+
+            .right-middle {
+                grid-area: right-middle;
+                margin: 20px;
+                align-items: flex-start;
+                display: grid;
+
+                span {
+                    @include textTransform(uppercase);
+                    color: $rightSidebarPink;
+                }
+            }
+
+            .right-bottom {
+                grid-area: right-bottom;
+                font-family: Trenda-Semibold, sans-serif;
+                text-align: center;
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                margin: 20px;
+                font-size: smaller;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 2214px) and (min-width: 1401px) {
+        .main-container {
+            grid-template-columns: 350px auto 350px;
+        }
+    }
+
+    @media only screen and (max-width: 1400px) and (min-width: 1025px) {
+        .main-container {
+            grid-template-columns: 200px auto 250px;
+        }
+    }
+
+    @media only screen and (max-width: 1024px) and (min-width: 769px) {
+        .main-container {
+            grid-template-columns: 200px auto 200px;
+        }
+    }
+
+    @media only screen and (max-width: 768px) and (min-width: 577px) {
+        .main-container {
+            grid-template-columns: 175px auto 200px;
+        }
+    }
+
+    @include smallScreenAdjustment(567px, 350px, 15px);
+    @include smallScreenAdjustment(349px, 300px, 5px);
+    @include smallScreenAdjustment(299px, 100px, 0);
+
+}

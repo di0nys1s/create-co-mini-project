@@ -6,21 +6,28 @@
     <title></title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--
+      <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+        crossorigin="anonymous"
+      />
+    -->
     <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-      crossorigin="anonymous"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
-    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="/styles/css/styles.css" />
   </head>
   <body>
     <section class="main-container">
       <div class="page-header">
         <div class="header-home">
           <a href="/"
-            ><span class="header-vm">VM</span><span class="header-create">Create<span></a>
+            ><span class="header-vm">VM</span
+            ><span class="header-create">Create</span></a
+          >
         </div>
         <div class="header-login">
           <span>Hello Admin</span>
@@ -31,13 +38,15 @@
         <a href="/">
           <div class="left-sidebar-icon">
             <img src="./images/homeIcon.png" />
-            <p>Home</p>       
+            <p>Home</p>
           </div>
         </a>
         <a href="/">
           <div class="left-sidebar-icon">
             <img src="./images/manageClientsIcon.png" />
-            <p>Manage Clients <i class="fa fa-angle-down" aria-hidden="true"></i></p>
+            <p>
+              Manage Clients <i class="fa fa-angle-down" aria-hidden="true"></i>
+            </p>
           </div>
         </a>
         <a href="/">
@@ -56,25 +65,42 @@
 
       <div class="main">
         <div class="main-header-container">
-          <span class="main-primary-header"></span><br />
-          <span class="main-secondary-header"></span>
+          <span class="main-primary-header">Home</span>
+          <br />
+          <span class="main-secondary-header">Hey Emma,</span>
         </div>
 
-        <div class="campaign-dashboard">
-          <span></span>
-        </div>
+        <div class="box-container">
+            <a class="campaign-dashboard" href="/">
+              <div class="campaign-dashboard-text">
+                <span>View</span><br />
+                <span>Campaign</span><br />
+                <span>Dashboard</span>
+              </div>
+            </a>
 
-        <div class="campaign-boxes">
-          <div class="campaign-box-item">
-            <span></span>
-          </div>
+            <a class="campaign-box campaign-box-item-1" href="/">
+              <div class="campaign-box-text">
+                <span>Create</span><br />
+                <span>Campaign</span><br />
+                <span>From Scratch</span>
+              </div>
+            </a>
 
-          <div class="campaign-box-item">
-            <span></span>
-          </div>
+          <a class="campaign-box campaign-box-item-2" href="/">
+            <div class="campaign-box-text">
+              <span>Add</span><br />
+              <span>Campaign</span><br />
+              <span>From Template</span>
+            </div>
+          </a>
 
-          <div class="campaign-box-item">
-            <span></span>
+          <div class="campaign-box campaign-box-item-3">
+            <div class="campaign-box-text">
+              <span>Copy</span><br />
+              <span>Campaign</span><br />
+              <span>From Previous</span>
+            </div>
           </div>
         </div>
       </div>
@@ -91,8 +117,8 @@
         </div>
         <div class="right-middle">
           <p>
-            <span>Fun Facts:</span><br />Did you know that the Chinese invented
-            business cards in the 1400's.
+            <span>Fun Facts:</span><br /><br />Did you know that the Chinese
+            invented business cards in the 1400's.
           </p>
         </div>
         <div class="right-bottom">
