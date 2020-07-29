@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--
+      <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous"
+      />
+    -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="semantic/dist/table.min.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="semantic/dist/progress.min.css"
+    />
+    <link rel="stylesheet" href="/styles/css/styles.css" />
+  </head>
+  <body>
+    <div class="dashboard">
+      <section class="main-container">
+        <div class="page-header">
+          <div class="header-home">
+            <a href="/">
+              <img src="/images/logo1.png" alt="" />
+            </a>
+          </div>
+          <div class="header-login">
+            <span>Hello Admin</span>
+            <a href="#"><img src="./images/accountIcon1.png" /></a>
+          </div>
+        </div>
+
+        <div class="left-sidebar">
+          <a href="/">
+            <div class="left-sidebar-icon">
+              <img
+                class="left-sidebar-icon-image left-sidebar-icon-home"
+                src="./images/homeIcon1.png"
+              />
+            </div>
+          </a>
+          <a href="#">
+            <div class="left-sidebar-icon">
+              <img
+                class="left-sidebar-icon-image"
+                src="./images/clientsIcon1.png"
+              />
+            </div>
+          </a>
+          <a href="/dashboard.html">
+            <div class="left-sidebar-icon">
+              <img
+                class="left-sidebar-icon-image"
+                src="./images/dashboardIcon1.png"
+              />
+            </div>
+          </a>
+          <a href="#">
+            <div class="left-sidebar-icon">
+              <img
+                class="left-sidebar-icon-image"
+                src="./images/toolsIcon1.png"
+              />
+            </div>
+          </a>
+        </div>
+
+        <div class="dashboard">
+          <div class="dashboard-header-container">
+            <span class="dashboard-primary-header">Campaigns</span>
+            <br />
+            <div class="dashboard-secondary-header">
+              <span class="dashboard-secondary-list-item"
+                >Active Campaigns</span
+              >
+              <span class="dashboard-secondary-list-item"
+                >Completed Campaigns</span
+              >
+              <div class="dashboard-secondary-list-item dropdown">
+                <button class="dropbtn">
+                  Select Brand
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                  <a href="#">Brand 1</a>
+                  <a href="#">Brand 2</a>
+                  <a href="#">Brand 3</a>
+                </div>
+              </div>
+
+              <a class="add-table-item" href="/">
+                <img src="/images/addTableItemIcon1.png" alt="" />
+              </a>
+            </div>
+          </div>
+
+          <div class="table-container">
+            <div class="grid-table" style="overflow-x: auto;">
+              <div class="grid-table-row table-header">
+                <div class="grid-table-header grid-table-header-1">
+                  Campaign
+                </div>
+                <div class="grid-table-header grid-table-header-2">Tools</div>
+                <div class="grid-table-header grid-table-header-3">
+                  Next Step
+                </div>
+                <div class="grid-table-header grid-table-header-4"></div>
+              </div>
+
+              <div class="grid-table-row">
+                <div
+                  class="grid-table-cell grid-table-cell-1"
+                  data-title="Title"
+                >
+                  <div class="campaign-name-text">
+                    <span>Campaign Name</span>
+                  </div>
+                  <div class="campaign-row-secondary">
+                    <div class="campaign-cell-button-container">
+                      <a href="#" class="table-button">Manage</a>
+                    </div>
+                    <div class="campaign-cell-text-container">
+                      <p>Quote #12345</p>
+                      <p>Instore:</p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="grid-table-cell grid-table-cell-2"
+                  data-title="Number"
+                >
+                  <a href="#" class="table-button table-button-tools">Copy</a>
+                  <a href="#" class="table-button table-button-tools">Edit</a>
+                </div>
+                <div
+                  class="grid-table-cell grid-table-cell-3"
+                  data-title="Series"
+                >
+                  <a href="#" class="table-button table-button-next">Upload</a>
+                  <a href="#" class="table-button table-button-next">Approve</a>
+                </div>
+                <div
+                  class="grid-table-cell grid-table-cell-4"
+                  data-title="Air Date"
+                >
+                  Progess Bar will be here
+                </div>
+              </div>
+
+              <div class="grid-table-row">
+                <div
+                  class="grid-table-cell grid-table-cell-1"
+                  data-title="Title"
+                >
+                  <div class="campaign-name-text">
+                    <span>Campaign Name</span>
+                  </div>
+                  <div class="campaign-row-secondary">
+                    <div class="campaign-cell-button-container">
+                      <a href="#" class="table-button">Manage</a>
+                    </div>
+                    <div class="campaign-cell-text-container">
+                      <p>Quote #12345</p>
+                      <p>Instore:</p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="grid-table-cell grid-table-cell-2"
+                  data-title="Number"
+                >
+                  <a href="#" class="table-button table-button-tools">Copy</a>
+                  <a href="#" class="table-button table-button-tools">Edit</a>
+                </div>
+                <div
+                  class="grid-table-cell grid-table-cell-3"
+                  data-title="Series"
+                >
+                  <a href="#" class="table-button table-button-next">Upload</a>
+                  <a href="#" class="table-button table-button-next">Approve</a>
+                </div>
+                <div
+                  class="grid-table-cell grid-table-cell-4"
+                  data-title="Air Date"
+                >
+                  Progess Bar will be here
+                </div>
+              </div>
+
+              <div class="grid-table-row">
+                <div
+                  class="grid-table-cell grid-table-cell-1"
+                  data-title="Title"
+                >
+                  <div class="campaign-name-text">
+                    <span>Campaign Name</span>
+                  </div>
+                  <div class="campaign-row-secondary">
+                    <div class="campaign-cell-button-container">
+                      <a href="#" class="table-button">Manage</a>
+                    </div>
+                    <div class="campaign-cell-text-container">
+                      <p>Quote #12345</p>
+                      <p>Instore:</p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="grid-table-cell grid-table-cell-2"
+                  data-title="Number"
+                >
+                  <a href="#" class="table-button table-button-tools">Copy</a>
+                  <a href="#" class="table-button table-button-tools">Edit</a>
+                </div>
+                <div
+                  class="grid-table-cell grid-table-cell-3"
+                  data-title="Series"
+                >
+                  <a href="#" class="table-button table-button-next">Upload</a>
+                  <a href="#" class="table-button table-button-next">Approve</a>
+                </div>
+                <div
+                  class="grid-table-cell grid-table-cell-4"
+                  data-title="Air Date"
+                >
+                  Progess Bar will be here
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="right-sidebar">
+          <div class="right-top">
+            <div class="right-sidebar-icon">
+              <img
+                class="right-sidebar-bell-image"
+                src="/images/bellNotNot.png"
+                class="bell-image"
+              />
+              <p>
+                You have 1 campaign to action<br /><br />
+                <a href="/"><span>Click here</span></a>
+              </p>
+            </div>
+          </div>
+          <div class="right-middle">
+            <p>
+              <span>Fun Facts:</span><br /><br />Did you know that the Chinese
+              invented business cards in the 1400's.
+            </p>
+          </div>
+          <div class="right-bottom">
+            <p>
+              03 9761 4500 142<br />
+              Centerbury Rd.<br />
+              Kilsyth VIC 3137
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

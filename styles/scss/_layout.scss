@@ -10,72 +10,103 @@
     justify-content: $justify
 }
 
-@mixin smallScreenAdjustment($maxWidth, $minWidth, $leftSidebarIconMargin) {
-        @media only screen and (max-width: $maxWidth) and (min-width: $minWidth) {
-            .main-container {
-                max-width: 100%;
-                height: auto;
-                grid-template-columns: 100%;
-                grid-template-rows: 10% 5% 45% 40%;
-                row-gap: 5%;
-                grid-template-areas:
-                    'page-header'
-                    'left-sidebar'
-                    'main'
-                    'right-sidebar';
+@mixin smallScreenAdjustment($maxWidth, $minWidth) {
+    @media only screen and (max-width: $maxWidth) and (min-width: $minWidth) {
+        .main-container {
+            max-width: 100%;
+            height: auto;
+            grid-template-columns: 100%;
+            grid-template-rows: 8% 5% 57% 30%;
+            row-gap: 5%;
+            grid-template-areas:
+                'page-header'
+                'left-sidebar'
+                'main'
+                'right-sidebar';
 
-                .left-sidebar {
-                    grid-area: left-sidebar;
-                    display: flex;
-                    align-items: baseline;
-                    justify-content: space-evenly;
-                    padding: 0 30px;
-                    margin-top: 0;
 
-                    .left-sidebar-icon {
-                        margin-right: $leftSidebarIconMargin;
-                    }
+            .header-home {
 
+                img {
+                    max-width: 200px;
+                    height: auto;
+                    position: absolute;
+                    top: 20px;
+                    left: -10px;
+                }
+            }
+
+            .header-login {
+                span {
+                    color: #fff;
+                }
+            }
+
+            .left-sidebar {
+                grid-area: left-sidebar;
+                display: flex;
+                align-items: baseline;
+                justify-content: space-evenly;
+                padding: 0 30px;
+                margin: 0;
+
+                .left-sidebar-icon-image {
+                    max-width: 85%;
+                    height: auto;
                 }
 
-                .right-sidebar {
-                    grid-template-rows: 33.3% 33.3% 33.3%;
-                    text-align: center;
-                    display: grid;
-                    justify-content: center;
-
-                    .right-top {
-                        text-align: center;
-                        display: grid;
-                        justify-content: center;
-                    }
-
-                    .right-middle {
-                        margin-top: 40px;
-                        margin-bottom: 100px;
-                    }
+                .left-sidebar-icon-home {
+                    max-width: 100%;
+                    height: auto;
                 }
 
             }
+
+            .right-sidebar {
+                grid-template-rows: 33.3% 33.3% 33.3%;
+                text-align: center;
+                display: grid;
+                justify-content: center;
+
+                .right-top {
+                    text-align: center;
+                    display: grid;
+                    justify-content: center;
+                }
+
+                .right-middle {
+                    margin-top: 40px;
+                    margin-bottom: 100px;
+                }
+            }
+
         }
+    }
 }
 
 body {
-    background: url(/images/backgroundHome.png);
-    background-size: cover;
 
     a {
         text-decoration: none;
         color: $mainWhite
     }
 
+    .home {
+        background: url(/images/backgroundHome.png);
+        background-size: cover;
+    }
+
+    .dashboard {
+        background-color: $mainWhite;
+    }
+
     .main-container {
         display: grid;
         width: 100vw;
         height: 100vh;
-        grid-gap: 0;
+        row-gap: 0;
         column-gap: 40px;
-        grid-template-rows: 12% 88%;
+        grid-template-rows: 80px auto;
         grid-template-areas:
             'page-header  page-header page-header'
             'left-sidebar main        right-sidebar';
@@ -88,34 +119,21 @@ body {
             justify-content: space-between;
             align-items: center;
 
-            .header-home {
-                margin-left: 20px;
-                display: flex;
-                font-size: 36px;
-
-                .header-vm {
-                    font-family: Trenda-Bold, sans-serif;
-                    color: $headerBlueVM;
-                }
-
-                .header-create {
-                    font-family: Black-Diamond, sans-serif;
-                    color: $headerBlueCreate;
-                    margin-left: 3px;
-                    font-size: 48px;
-
-                }
-            }
-
             .header-login {
-                margin-right: 20px;
                 display: flex;
-                justify-content: space-between;
+                justify-content: center;
                 align-items: center;
+
+                img {
+                    width: 75%;
+                    height: auto;
+                    margin-right: -50px;
+                }
             }
         }
 
-        .main {
+        .main,
+        .dashboard {
             grid-area: main;
             margin: 20px 0 0 0;
         }
@@ -129,31 +147,13 @@ body {
             align-items: center;
             border-right: 1.3px solid $mainBlue;
             margin: 80px 0;
-
-            a {
-                color: $mainBlue;
-            }
-
-            a:hover {
-                color: $mainWhite;
-            }
-
-            .left-sidebar-icon {
-
-                p {
-                    margin-top: 5px;
-
-                    .fa-angle-down {
-                        margin-left: 2px;
-                        font-size: larger;
-                    }
-                }
-            }
         }
 
         .right-sidebar {
             grid-area: right-sidebar;
             background-color: $mainBlue;
+            background-image: url('/images/rightSidebarBackground1.png');
+            background-position: center;
             font-family: Trenda-Bold, sans-serif;
             color: #fff;
             display: grid;
@@ -184,7 +184,9 @@ body {
                     }
                 }
 
-                .bell-image {
+                .right-sidebar-bell-image {
+                    max-width: 20%;
+                    height: auto;
                     margin-bottom: 10px;
                 }
             }
@@ -217,29 +219,100 @@ body {
     @media only screen and (max-width: 2214px) and (min-width: 1401px) {
         .main-container {
             grid-template-columns: 350px auto 350px;
+
+            .header-home {
+                img {
+                    max-width: 300px;
+                    height: auto;
+                    position: absolute;
+                    top: 10px;
+                    left: -10px;
+                }
+            }
+
+            .left-sidebar-icon-image {
+                max-width: 35%;
+                height: auto;
+            }
+
+            .left-sidebar-icon-home {
+                max-width: 25%;
+                height: auto;
+            }
+
         }
     }
 
     @media only screen and (max-width: 1400px) and (min-width: 1025px) {
         .main-container {
             grid-template-columns: 200px auto 250px;
+
+            .header-home {
+                img {
+                    max-width: 300px;
+                    height: auto;
+                    position: absolute;
+                    top: 10px;
+                    left: -10px;
+                }
+            }
+
+            .left-sidebar-icon-image {
+                max-width: 45%;
+                height: auto;
+            }
+
+            .left-sidebar-icon-home {
+                max-width: 35%;
+                height: auto;
+            }
         }
     }
 
     @media only screen and (max-width: 1024px) and (min-width: 769px) {
         .main-container {
             grid-template-columns: 200px auto 200px;
+
+            .header-home {
+                img {
+                    max-width: 300px;
+                    height: auto;
+                    position: absolute;
+                    top: 10px;
+                    left: -10px;
+                }
+            }
         }
     }
 
     @media only screen and (max-width: 768px) and (min-width: 577px) {
         .main-container {
             grid-template-columns: 175px auto 200px;
+
+            .header-home {
+                img {
+                    max-width: 300px;
+                    height: auto;
+                    position: absolute;
+                    top: 10px;
+                    left: -10px;
+                }
+            }
+
+            .left-sidebar-icon-image {
+                max-width: 60%;
+                height: auto;
+            }
+
+            .left-sidebar-icon-home {
+                max-width: 45%;
+                height: auto;
+            }
         }
     }
 
-    @include smallScreenAdjustment(567px, 350px, 15px);
-    @include smallScreenAdjustment(349px, 300px, 5px);
-    @include smallScreenAdjustment(299px, 100px, 0);
+    @include smallScreenAdjustment(567px, 350px);
+    @include smallScreenAdjustment(349px, 300px);
+    @include smallScreenAdjustment(299px, 100px);
 
 }

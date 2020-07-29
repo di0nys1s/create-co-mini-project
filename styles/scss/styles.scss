@@ -1,4 +1,5 @@
 @import 'main';
+@import 'dashboard';
 
 * {
     box-sizing: border-box;
@@ -11,9 +12,4 @@ body {
     font-family: Trenda-Regular, sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
-}
-
-body {
-    background: url(/images/backgroundHome.png);
-    background-size: cover;
 }
