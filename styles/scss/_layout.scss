@@ -10,6 +10,89 @@
     justify-content: $justify
 }
 
+@mixin mediumScreenAdjustment($maxWidth, $minWidth, $height) {
+    @media only screen and (max-width: $maxWidth) and (min-width: $minWidth) {
+        .main-container {
+            max-width: 100%;
+            height: $height;
+            grid-template-columns: 100%;
+            grid-template-rows: 8% 5% 57% 30%;
+            row-gap: 5%;
+            grid-template-areas:
+                'page-header'
+                'left-sidebar'
+                'main'
+                'right-sidebar';
+
+            .dashboard {
+                margin: 0 20px;
+
+                .dashboard-header-container {
+                    text-align: center;
+                }
+            }
+
+            .main {
+                margin: 10px 10%;
+
+                .main-header-container {
+                    text-align: center;
+                }
+            }
+
+            .header-home {
+
+                img {
+                    max-width: 35%;
+                    height: auto;
+                    position: absolute;
+                    top: 1%;
+                    left: -10px;
+                }
+            }
+
+            .left-sidebar {
+                grid-area: left-sidebar;
+                display: flex;
+                align-items: baseline;
+                justify-content: space-evenly;
+                padding: 0 30px;
+                margin: 0;
+
+                .left-sidebar-icon-image {
+                    max-width: 65%;
+                    height: auto;
+                }
+
+                .left-sidebar-icon-home {
+                    max-width: 70%;
+                    height: auto;
+                }
+
+            }
+
+            .right-sidebar {
+                grid-template-rows: 33.3% 33.3% 33.3%;
+                text-align: center;
+                display: grid;
+                justify-content: center;
+
+                .right-top {
+                    text-align: center;
+                    display: grid;
+                    justify-content: center;
+                }
+
+                .right-middle {
+                    margin-top: 40px;
+                    margin-bottom: 100px;
+                }
+            }
+
+        }
+    }
+}
+
 @mixin smallScreenAdjustment($maxWidth, $minWidth) {
     @media only screen and (max-width: $maxWidth) and (min-width: $minWidth) {
         .main-container {
@@ -23,7 +106,6 @@
                 'left-sidebar'
                 'main'
                 'right-sidebar';
-
 
             .header-home {
 
@@ -269,6 +351,7 @@ body {
         }
     }
 
+    /*
     @media only screen and (max-width: 1024px) and (min-width: 769px) {
         .main-container {
             grid-template-columns: 200px auto 200px;
@@ -310,8 +393,11 @@ body {
             }
         }
     }
+    */
 
-    @include smallScreenAdjustment(567px, 350px);
+    @include mediumScreenAdjustment(992px, 577px, auto);
+    @include mediumScreenAdjustment(1200px, 993px, 140vw);
+    @include smallScreenAdjustment(576px, 350px);
     @include smallScreenAdjustment(349px, 300px);
     @include smallScreenAdjustment(299px, 100px);
 
