@@ -23,8 +23,8 @@
         justify-content: space-between;
 
         .dashboard-secondary-list-item {
-            margin-right: 6%;
             cursor: pointer;
+            padding: 0 10px;
 
             &:hover {
                 color: grey;
@@ -39,7 +39,6 @@
         }
 
         .dropdown {
-            float: left;
             overflow: hidden;
 
             &:hover .dropdown-content {
@@ -71,17 +70,18 @@
                 box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
                 z-index: 1;
 
+
                 a {
                     float: none;
                     color: black;
-                    padding: 12px 16px;
-                    text-decoration: none;
+                    padding: 10px 16px;
                     display: block;
-                    text-align: left;
+                    border-radius: 3px;
                 }
 
                 a:hover {
                     background-color: $headerBlueVM;
+                    border-radius: 3px;
                 }
             }
         }
@@ -224,7 +224,7 @@
                             float: left;
                             min-width: 1%;
                             height: 100%;
-                            background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(2, 0, 82, 1) 5%, rgba(11, 174, 205, 1) 100%);
+                            background: linear-gradient(70deg, rgb(30, 17, 81) 5%, rgb(11, 174, 205) 25%, rgb(122, 160, 255) 85%, rgb(2, 206, 201) 100%);
 
                             .percent {
                                 position: absolute;
@@ -250,15 +250,13 @@
 
     }
 
-    @media only screen and (min-width: 1400px) {}
-
-    @media only screen and (max-width: 1024px) and (min-width: 769px) {}
-
-    @media only screen and (max-width: 768px) and (min-width: 577px) {}
-
-    @media only screen and (max-width: 576px) {
+    @media only screen and (max-width: 1024px) and (min-width: 100px) {
         .dashboard-header-container {
             text-align: center;
+
+            .dashboard-secondary-header {
+                justify-content: center;
+            }
         }
     }
 

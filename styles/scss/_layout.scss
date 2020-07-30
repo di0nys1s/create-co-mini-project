@@ -65,7 +65,7 @@
                 }
 
                 .left-sidebar-icon-home {
-                    max-width: 70%;
+                    max-width: 65%;
                     height: auto;
                 }
 
@@ -138,7 +138,7 @@
                 }
 
                 .left-sidebar-icon-home {
-                    max-width: 100%;
+                    max-width: 85%;
                     height: auto;
                 }
 
@@ -174,8 +174,8 @@ body {
     }
 
     .home {
-        background: url(/images/backgroundHome.png);
-        background-size: cover;
+        background: url(/images/backgroundHome1.png);
+        background-position: center top 60px;
     }
 
     .dashboard {
@@ -300,7 +300,7 @@ body {
 
     @media only screen and (max-width: 2214px) and (min-width: 1401px) {
         .main-container {
-            grid-template-columns: 350px auto 350px;
+            grid-template-columns: 300px auto 300px;
 
             .header-home {
                 img {
@@ -313,12 +313,12 @@ body {
             }
 
             .left-sidebar-icon-image {
-                max-width: 35%;
+                max-width: 40%;
                 height: auto;
             }
 
             .left-sidebar-icon-home {
-                max-width: 25%;
+                max-width: 40%;
                 height: auto;
             }
 
@@ -327,50 +327,7 @@ body {
 
     @media only screen and (max-width: 1400px) and (min-width: 1025px) {
         .main-container {
-            grid-template-columns: 200px auto 250px;
-
-            .header-home {
-                img {
-                    max-width: 300px;
-                    height: auto;
-                    position: absolute;
-                    top: 10px;
-                    left: -10px;
-                }
-            }
-
-            .left-sidebar-icon-image {
-                max-width: 45%;
-                height: auto;
-            }
-
-            .left-sidebar-icon-home {
-                max-width: 35%;
-                height: auto;
-            }
-        }
-    }
-
-    /*
-    @media only screen and (max-width: 1024px) and (min-width: 769px) {
-        .main-container {
-            grid-template-columns: 200px auto 200px;
-
-            .header-home {
-                img {
-                    max-width: 300px;
-                    height: auto;
-                    position: absolute;
-                    top: 10px;
-                    left: -10px;
-                }
-            }
-        }
-    }
-
-    @media only screen and (max-width: 768px) and (min-width: 577px) {
-        .main-container {
-            grid-template-columns: 175px auto 200px;
+            grid-template-columns: 150px auto 200px;
 
             .header-home {
                 img {
@@ -388,12 +345,11 @@ body {
             }
 
             .left-sidebar-icon-home {
-                max-width: 45%;
+                max-width: 60%;
                 height: auto;
             }
         }
     }
-    */
 
     @include mediumScreenAdjustment(992px, 577px, auto);
     @include mediumScreenAdjustment(1200px, 993px, 140vw);

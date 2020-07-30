@@ -19,7 +19,7 @@
     .box-container {
         margin-top: 30px;
         display: grid;
-        grid-template-columns: repeat(21, 1fr);
+        grid-template-columns: repeat(20, 1fr);
         row-gap: 20px;
 
         .campaign-dashboard:hover,
@@ -30,7 +30,7 @@
         .campaign-dashboard {
             grid-column: 1 / 21;
             padding-top: -10rem;
-            padding-bottom: 7rem;
+            padding-bottom: 8rem;
             border-radius: 5px;
             background-color: $mainBlue;
             color: $mainWhite;
@@ -55,7 +55,7 @@
             border-radius: 5px;
             background-color: $mainBlue;
             color: $mainWhite;
-            padding-bottom: 7rem;
+            padding-bottom: 8rem;
             background-repeat: no-repeat;
             background-position: right -15px bottom -15px;
             background-size: 90px;
