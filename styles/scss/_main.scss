@@ -2,263 +2,258 @@
 @import 'config';
 
 .main {
+	.main-primary-header {
+		color: $mainYellow;
+		font-family: Trenda-Bold;
+		font-size: 2.75rem;
+		@include textTransform(uppercase);
+	}
 
-    .main-primary-header {
-        color: $mainYellow;
-        font-family: Trenda-Bold;
-        font-size: 2.75rem;
-        @include textTransform(uppercase);
-    }
+	.main-secondary-header {
+		color: $mainBlue;
+		font-family: Trenda-Semibold;
+		font-size: 2rem;
+	}
 
-    .main-secondary-header {
-        color: $mainBlue;
-        font-family: Trenda-Semibold;
-        font-size: 2rem;
-    }
+	.box-container {
+        margin: 30px 0;
+		display: grid;
+		grid-template-columns: repeat(20, 1fr);
+		row-gap: 20px;
 
-    .box-container {
-        margin-top: 30px;
-        display: grid;
-        grid-template-columns: repeat(20, 1fr);
-        row-gap: 20px;
+		.campaign-dashboard:hover,
+		.campaign-box:hover {
+			filter: brightness(110%);
+		}
 
-        .campaign-dashboard:hover,
-        .campaign-box:hover {
-            filter: brightness(110%);
-        }
+		.campaign-dashboard {
+			grid-column: 1 / 21;
+			padding-top: -10rem;
+			padding-bottom: 8rem;
+			border-radius: 5px;
+			background-color: $mainBlue;
+			color: $mainWhite;
+			justify-content: space-around;
+			background-image: url('../../images/viewCampaignDashboardIcon1.png');
+			background-repeat: no-repeat;
+			background-position: right -25px bottom -40px;
+			background-size: 200px;
 
-        .campaign-dashboard {
-            grid-column: 1 / 21;
-            padding-top: -10rem;
-            padding-bottom: 8rem;
-            border-radius: 5px;
-            background-color: $mainBlue;
-            color: $mainWhite;
-            justify-content: space-around;
-            background-image: url('../../images/viewCampaignDashboardIcon1.png');
-            background-repeat: no-repeat;
-            background-position: right -25px bottom -40px;
-            background-size: 200px;
+			.campaign-dashboard-text {
+				font-family: Trenda-Bold;
+				@include textTransform(uppercase);
+				font-size: 120%;
+				position: relative;
+				top: 50px;
+				left: 30px;
+			}
+		}
 
-            .campaign-dashboard-text {
-                font-family: Trenda-Bold;
-                @include textTransform(uppercase);
-                font-size: 120%;
-                position: relative;
-                top: 50px;
-                left: 30px;
-            }
+		.campaign-box {
+			border-radius: 5px;
+			background-color: $mainBlue;
+			color: $mainWhite;
+			padding-bottom: 8rem;
+			background-repeat: no-repeat;
+			background-position: right -15px bottom -15px;
+			background-size: 90px;
 
-        }
+			&-text {
+				font-family: Trenda-Bold;
+				@include textTransform(uppercase);
+				font-size: 120%;
+				position: relative;
+				top: 30px;
+				left: 20px;
+			}
 
-        .campaign-box {
-            border-radius: 5px;
-            background-color: $mainBlue;
-            color: $mainWhite;
-            padding-bottom: 8rem;
-            background-repeat: no-repeat;
-            background-position: right -15px bottom -15px;
-            background-size: 90px;
+			&-item-1 {
+				grid-column: 1 / 7;
+				background-image: url('../../images/createCampaignIcon1.png');
+			}
 
-            &-text {
-                font-family: Trenda-Bold;
-                @include textTransform(uppercase);
-                font-size: 120%;
-                position: relative;
-                top: 30px;
-                left: 20px;
-            }
+			&-item-2 {
+				grid-column: 8 / 14;
+				background-image: url('../../images/addCampaignIcon1.png');
+			}
 
-            &-item-1 {
-                grid-column: 1 / 7;
-                background-image: url('../../images/createCampaignIcon1.png');
-            }
+			&-item-3 {
+				grid-column: 15 / 21;
+				background-image: url('../../images/copyCampaignIcon1.png');
+			}
+		}
+	}
 
-            &-item-2 {
-                grid-column: 8 / 14;
-                background-image: url('../../images/addCampaignIcon1.png');
-            }
+	@media only screen and (min-width: 1400px) {
+		.box-container {
+			grid-template-columns: repeat(29, 1fr);
 
-            &-item-3 {
-                grid-column: 15 / 21;
-                background-image: url('../../images/copyCampaignIcon1.png');
-            }
-        }
-    }
+			.campaign-dashboard {
+				grid-column: 1 / 31;
+				padding-bottom: 14rem;
+				background-size: 300px;
 
-    @media only screen and (min-width: 1400px) {
-        .box-container {
-            grid-template-columns: repeat(29, 1fr);
+				.campaign-dashboard-text {
+					font-size: 150%;
+					top: 65px;
+					left: 40px;
+				}
+			}
 
-            .campaign-dashboard {
-                grid-column: 1 / 31;
-                padding-bottom: 14rem;
-                background-size: 300px;
+			.campaign-box {
+				padding-bottom: 14rem;
+				background-size: 120px;
 
-                .campaign-dashboard-text {
-                    font-size: 150%;
-                    top: 65px;
-                    left: 40px;
-                }
-            }
+				.campaign-box-text {
+					font-size: 150%;
+					top: 65px;
+					left: 40px;
+				}
+			}
 
-            .campaign-box {
-                padding-bottom: 14rem;
-                background-size: 120px;
+			.campaign-box-item-1 {
+				grid-column: 1 / 10;
+			}
 
-                .campaign-box-text {
-                    font-size: 150%;
-                    top: 65px;
-                    left: 40px;
-                }
-            }
+			.campaign-box-item-2 {
+				grid-column: 11 / 20;
+			}
 
-            .campaign-box-item-1 {
-                grid-column: 1 / 10;
-            }
+			.campaign-box-item-3 {
+				grid-column: 21 / 30;
+			}
+		}
+	}
 
-            .campaign-box-item-2 {
-                grid-column: 11 / 20;
-            }
+	@media only screen and (max-width: 1024px) and (min-width: 769px) {
+		.box-container {
+			grid-template-columns: repeat(23, 1fr);
 
-            .campaign-box-item-3 {
-                grid-column: 21 / 30;
-            }
-        }
-    }
+			.campaign-dashboard {
+				grid-column: 1 / 24;
+				padding-bottom: 10rem;
 
-    @media only screen and (max-width: 1024px) and (min-width: 769px) {
-        .box-container {
-            grid-template-columns: repeat(23, 1fr);
+				.campaign-dashboard-text {
+					font-size: 120%;
+					top: 50px;
+					left: 40px;
+				}
+			}
 
-            .campaign-dashboard {
-                grid-column: 1 / 24;
-                padding-bottom: 10rem;
+			.campaign-box {
+				padding-bottom: 9rem;
 
-                .campaign-dashboard-text {
-                    font-size: 120%;
-                    top: 50px;
-                    left: 40px;
-                }
-            }
+				.campaign-box-text {
+					font-size: 120%;
+					top: 45px;
+					left: 40px;
+				}
+			}
 
-            .campaign-box {
-                padding-bottom: 9rem;
+			.campaign-box-item-1 {
+				grid-column: 1 / 12;
+			}
 
-                .campaign-box-text {
-                    font-size: 120%;
-                    top: 45px;
-                    left: 40px;
-                }
-            }
+			.campaign-box-item-2 {
+				grid-column: 13 / 24;
+			}
 
-            .campaign-box-item-1 {
-                grid-column: 1 / 12;
-            }
+			.campaign-box-item-3 {
+				grid-column: 1 / 24;
+				background-size: 150px;
+			}
+		}
+	}
 
-            .campaign-box-item-2 {
-                grid-column: 13 / 24;
-            }
+	@media only screen and (max-width: 768px) and (min-width: 577px) {
+		.box-container {
+			grid-template-columns: repeat(18, 1fr);
 
-            .campaign-box-item-3 {
-                grid-column: 1 / 24;
-                background-size: 150px;
+			.campaign-dashboard {
+				grid-column: 1 / 19;
+				padding-bottom: 4rem;
+				background-size: 150px;
+				background-position: right -15px bottom -25px;
 
-            }
-        }
-    }
+				.campaign-dashboard-text {
+					font-size: 100%;
+					top: 30px;
+					left: 15px;
+				}
+			}
 
-    @media only screen and (max-width: 768px) and (min-width: 577px) {
-        .box-container {
-            grid-template-columns: repeat(18, 1fr);
+			.campaign-box {
+				padding-bottom: 4rem;
+				background-size: 50px;
+				background-position: right -10px bottom -10px;
 
-            .campaign-dashboard {
-                grid-column: 1 / 19;
-                padding-bottom: 4rem;
-                background-size: 150px;
-                background-position: right -15px bottom -25px;
+				&-item-3 {
+					background-size: 80px;
+				}
 
-                .campaign-dashboard-text {
-                    font-size: 100%;
-                    top: 30px;
-                    left: 15px;
-                }
-            }
+				.campaign-box-text {
+					font-size: 80%;
+					top: 20px;
+					left: 15px;
+				}
+			}
 
-            .campaign-box {
-                padding-bottom: 4rem;
-                background-size: 50px;
-                background-position: right -10px bottom -10px;
+			.campaign-box-item-1 {
+				grid-column: 1 / 10;
+			}
 
-                &-item-3 {
-                    background-size: 80px;
-                }
+			.campaign-box-item-2 {
+				grid-column: 11 / 20;
+			}
 
-                .campaign-box-text {
-                    font-size: 80%;
-                    top: 20px;
-                    left: 15px;
-                }
-            }
+			.campaign-box-item-3 {
+				grid-column: 1 / 20;
+			}
+		}
+	}
 
-            .campaign-box-item-1 {
-                grid-column: 1 / 10;
-            }
+	@media only screen and (max-width: 576px) {
+		.main-header-container {
+			text-align: center;
+			margin-top: -40px;
+		}
 
-            .campaign-box-item-2 {
-                grid-column: 11 / 20;
-            }
+		.box-container {
+			grid-template-columns: repeat(3, 1fr);
+			margin: 20px 40px;
 
-            .campaign-box-item-3 {
-                grid-column: 1 / 20;
-            }
-        }
-    }
+			.campaign-dashboard {
+				grid-column: 1 / 4;
+				padding-bottom: 3rem;
 
-    @media only screen and (max-width: 576px) {
+				.campaign-dashboard-text {
+					font-size: 100%;
+					top: 25px;
+					left: 30px;
+				}
+			}
 
-        .main-header-container {
-            text-align: center;
-            margin-top: -40px;
-        }
+			.campaign-box {
+				padding-bottom: 2rem;
 
-        .box-container {
-            grid-template-columns: repeat(3, 1fr);
-            margin: 20px 40px;
+				.campaign-box-text {
+					font-size: 100%;
+					top: 15px;
+					left: 30px;
+				}
+			}
 
-            .campaign-dashboard {
-                grid-column: 1 / 4;
-                padding-bottom: 3rem;
+			.campaign-box-item-1 {
+				grid-column: 1 / 4;
+			}
 
-                .campaign-dashboard-text {
-                    font-size: 100%;
-                    top: 25px;
-                    left: 30px;
-                }
-            }
+			.campaign-box-item-2 {
+				grid-column: 1 / 4;
+			}
 
-            .campaign-box {
-                padding-bottom: 2rem;
-
-                .campaign-box-text {
-                    font-size: 100%;
-                    top: 15px;
-                    left: 30px;
-                }
-            }
-
-            .campaign-box-item-1 {
-                grid-column: 1 / 4;
-            }
-
-            .campaign-box-item-2 {
-                grid-column: 1 / 4;
-            }
-
-            .campaign-box-item-3 {
-                grid-column: 1 / 4;
-            }
-        }
-    }
-
+			.campaign-box-item-3 {
+				grid-column: 1 / 4;
+			}
+		}
+	}
 }
