@@ -125,8 +125,6 @@
 
             .campaign-row-secondary {
                 display: grid;
-                grid-template-areas: 'campaign-cell-button-container campaign-cell-text-container'
-                    'campaign-cell-button-container campaign-cell-text-container';
                 align-items: baseline;
                 justify-content: center;
                 margin-top: 10px;
@@ -138,10 +136,6 @@
                     font-family: Trenda-Semibold;
                     text-align: left;
                     margin-left: 12px;
-
-                    p {
-                        margin-bottom: 12px;
-                    }
                 }
 
                 .campaign-cell-button-container {
@@ -185,6 +179,7 @@
                     display: flex;
                     align-items: center;
                     justify-content: space-evenly;
+                    flex-wrap: wrap;
                 }
 
                 &-4 {
@@ -256,6 +251,32 @@
 
             .dashboard-secondary-header {
                 justify-content: center;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 100px) and (max-width: 600px) {
+        .campaign-row-secondary {
+            grid-template-areas: 'campaign-cell-button-container campaign-cell-button-container'
+                'campaign-cell-text-container campaign-cell-text-container';
+
+            .campaign-cell-text-container {
+                p:nth-child(2n-1) {
+                    margin-top: 12px;
+                }
+            }
+        }
+    }
+
+    @media only screen and (min-width: 601px) and (max-width: 5000px) {
+        .campaign-row-secondary {
+            grid-template-areas: 'campaign-cell-button-container campaign-cell-text-container'
+                'campaign-cell-button-container campaign-cell-text-container';
+
+            .campaign-cell-text-container {
+                p:nth-child(2n) {
+                    margin-top: 12px;
+                }
             }
         }
     }

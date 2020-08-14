@@ -117,7 +117,7 @@ body .main-container .right-sidebar .right-bottom {
   margin: 20px;
   font-size: smaller;
 }
-@media only screen and (max-width: 2214px) and (min-width: 1401px) {
+@media only screen and (min-width: 1401px) {
   body .main-container {
     grid-template-columns: 300px auto 300px;
   }
@@ -777,7 +777,7 @@ body .main-container .right-sidebar .right-bottom {
   margin: 20px;
   font-size: smaller;
 }
-@media only screen and (max-width: 2214px) and (min-width: 1401px) {
+@media only screen and (min-width: 1401px) {
   body .main-container {
     grid-template-columns: 300px auto 300px;
   }
@@ -1363,7 +1363,6 @@ body .main-container .right-sidebar .right-bottom {
 }
 .dashboard .table-container .grid-table .campaign-row-secondary {
   display: grid;
-  grid-template-areas: "campaign-cell-button-container campaign-cell-text-container" "campaign-cell-button-container campaign-cell-text-container";
   align-items: baseline;
   justify-content: center;
   margin-top: 10px;
@@ -1375,9 +1374,6 @@ body .main-container .right-sidebar .right-bottom {
   font-family: Trenda-Semibold;
   text-align: left;
   margin-left: 12px;
-}
-.dashboard .table-container .grid-table .campaign-row-secondary .campaign-cell-text-container p {
-  margin-bottom: 12px;
 }
 .dashboard .table-container .grid-table .campaign-row-secondary .campaign-cell-button-container {
   grid-area: campaign-cell-button-container;
@@ -1410,6 +1406,7 @@ body .main-container .right-sidebar .right-bottom {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 .dashboard .table-container .grid-table-cell-4 .progress-top {
   text-align: left;
@@ -1465,6 +1462,22 @@ body .main-container .right-sidebar .right-bottom {
   }
   .dashboard .dashboard-header-container .dashboard-secondary-header {
     justify-content: center;
+  }
+}
+@media only screen and (min-width: 100px) and (max-width: 600px) {
+  .dashboard .campaign-row-secondary {
+    grid-template-areas: "campaign-cell-button-container campaign-cell-button-container" "campaign-cell-text-container campaign-cell-text-container";
+  }
+  .dashboard .campaign-row-secondary .campaign-cell-text-container p:nth-child(2n-1) {
+    margin-top: 12px;
+  }
+}
+@media only screen and (min-width: 601px) and (max-width: 5000px) {
+  .dashboard .campaign-row-secondary {
+    grid-template-areas: "campaign-cell-button-container campaign-cell-text-container" "campaign-cell-button-container campaign-cell-text-container";
+  }
+  .dashboard .campaign-row-secondary .campaign-cell-text-container p:nth-child(2n) {
+    margin-top: 12px;
   }
 }
 
